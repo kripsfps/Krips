@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+
+/* Ajustar o espaçamento para puxar o conteúdo para cima */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #161623;
+    min-height: 100vh;
+    margin-top: 80px; /* Ajuste de margem superior para o conteúdo ficar mais próximo da navbar */
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(145deg, #0d48a100, #0b0b0b);
+    color: rgb(0, 4, 255);
+    padding: 25px 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Reduced Header Styles */
+header.shrink {
+    padding: 10px 10px;
+    background-color: rgba(11, 11, 11, 0.6); /* 60% opacity */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Logo and Nav Styling */
+/* Logo */
+.logo {
+    margin-right: auto;
+    font-family: 'Arial', sans-serif; /* Usar uma fonte mais clean */
+    font-size: 24px; /* Ajustar o tamanho da fonte do logo */
+    font-weight: 700; /* Deixar o logo mais destacado */
+}
+
+header.shrink .logo {
+    width: 100px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center; /* Centers the other navigation links */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+nav ul li {
+    margin: 0 30px;
+}
+
+nav ul li a {
+    color: #1c8de9;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.5s ease, font-size 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+nav ul li a.active {
+    color: #ffffff; /* Cor do texto ativo */
+    font-weight: 500; /* Peso médio para destaque */
+    border-bottom: 2px solid #1c8de9; /* Linha embaixo do link ativo */
+}
+
+
+/* Discord Button Styles */
+.discord-btn {
+    background-color: #5865F2;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    position: absolute; /* Para garantir a posição correta */
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%); /* Centro vertical */
+    transition: background-color 0.5s ease, transform 0.5s ease; /* Ajuste a duração aqui */
+}
+.discord-btn i {
+    margin-right: 8px;
+}
+
+.discord-btn:hover {
+    background-color: #0920f0;
+    transform: scale(1.05); /* Adiciona leve aumento no hover */
+}
+
+
+/* Redução de espaçamento no conteúdo principal */
+.sobre, .section {
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+.sobre {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15% 0;
+    margin-top: -55%;
+}
+
+.sobre .card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.sobre .card .content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.sobre .card:hover .content {
+    opacity: 1;
+    transform: translateY(-20px);
+}
+
+/* Ajuste para que o conteúdo principal fique mais perto do topo */
+#content {
+    margin-top: 3%;
+}
+
+.contentBx {
+    position: relative;
+    padding: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.contentBx h3,
+.contentBx .optimizer-text {
+    transition: opacity 0.3s ease;
+}
+
+.contentBx:hover h3,
+.contentBx:hover .optimizer-text {
+    opacity: 0;
+}
+
+.contentBx h3,
+.contentBx .optimizer-text {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.sobre .card:hover .contentBx h3,
+.sobre .card:hover .contentBx .optimizer-text {
+    color: rgba(0, 60, 255, 0);
+}
+
+.optimizer-text {
+    color: #ffffff;
+    transition: opacity 0.3s ease;
+}
+
+.sobre .card .imgBx {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid rgba(0, 0, 0, 0.2);
+}
+
+.sobre .card .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sobre .card .contentBx h3 {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 10px;
+    line-height: 1.1em;
+}
+
+.sobre .card .contentBx span {
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+.sobre .card .sci {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.sobre .card .sci li {
+    list-style: none;
+    margin: 0 10px;
+    transform: translateY(40px);
+    transition: 0.5s;
+    opacity: 0;
+    transition-delay: calc(0.1s * var(--i));
+}
+
+.sobre .card:hover .sci li {
+    transform: translateY(20px);
+    opacity: 1;
+}
+
+.sobre .card .sci a {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.sobre .card .sci a:hover {
+    color: rgb(0, 60, 255);
+}
+
+/* Botão de envio animado */
+.animated-button {
+    position: relative;
+    display: inline-block;
+    padding: 15px 100px;
+    background-color: transparent;
+    border: 2px solid #0059ff;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 10px;
+    overflow: hidden;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px rgba(1, 38, 250, 0.8), 0 0 40px rgba(28, 2, 255, 0.6);
+}
+
+.animated-button:hover {
+    background-color: #000000;
+    color: #fff;
+    box-shadow: 0 0 20px #0059ff, 0 0 40px #0059ff, 0 0 80px #0059ff;
+}
+
+.animated-button span {
+    position: absolute;
+    display: block;
+}

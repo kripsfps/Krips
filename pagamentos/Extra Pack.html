@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Pagamento</title>
+    <link rel="stylesheet" href="\assets/css/styles.css">
+    <link rel="stylesheet" href="\assets/css/input.css">
+    <link rel="stylesheet" href="\assets/css/output.css">
+
+    <link rel="icon" href="\imagens/favicon.ico" type="image/png">
+
+</head>
+
+<body class="bg-black fonts">
+
+    <div id="content" class="h-3/4">
+
+        <div id="content2" class="flex items-center justify-center">
+            <div class="h-full w-full color absolute -top-1/2 flex align-middle animate__animated animate__fadeInDown animate__delay-1s">
+            </div>
+        </div>
+
+        <header>
+            <!-- Aqui vai o conteúdo do header -->
+        </header>
+
+        <section class="flex flex-col items-center justify-start text-center p-4 h-3/4">
+            <h1 class="text-3xl h-10 md:h-20 md:text-6xl font-bold bg-gradient-to-t from-blue-300 to-blue-500 text-transparent bg-clip-text animate__animated animate__fadeInDown text-blue-500">
+                Finalizar Pagamento
+            </h1>
+
+            <div class="w-full md:w-582 animate__animated animate__fadeInUp mt-4 flex justify-center">
+                <div class="grid grid-cols-1 justify-items-center items-center">
+
+                    <div class="relative w-full">
+                        <div class="absolute inset-0 bg-blue-500 rounded-lg blur-sm"></div>
+                        <div class="relative bg-black border-blue-500 border-solid border p-6 rounded-lg">
+
+                            <div class="w-full text-center md:text-start mt-10 flex flex-col items-start">
+                                <span class="md:ml-0 ml-8 font-bold bg-gradient-to-t from-blue-300 to-blue-500 text-transparent bg-clip-text text-3xl sm:text-3lg">Detalhes:</span>
+                                <p class="md:ml-0 ml-8 mt-4 text-lg md:text-xl font-bold bg-gradient-to-t from-blue-300 to-blue-500 text-transparent bg-clip-text">
+                                    <span class="text-xl text-white">Pacote: </span>Extra-Pack
+                                </p>
+                                <p class="md:ml-0 ml-8 text-lg md:text-xl font-bold bg-gradient-to-t from-blue-300 to-blue-500 text-transparent bg-clip-text">
+                                    <span class="text-xl text-white">Custo: </span>61.50€
+                                </p>
+                            </div>
+
+                            <div class="w-full text-center md:text-start mt-10 flex flex-col items-start">
+                                <span class="md:ml-0 ml-8 font-bold bg-gradient-to-t from-blue-300 to-blue-500 text-transparent bg-clip-text text-3xl sm:text-3lg">Métodos de Pagamento:</span>
+                                <div class="flex items-center mt-4 md:ml-0 ml-8">
+                                    <input class="size-4 rounded border-blue-500" type="radio" id="1" name="payment" value="paypal" />
+                                    <p class="text-xl md:text-1xl text-white text-start ml-2">Paypal</p>
+                                </div>
+                                <div class="flex items-center mt-4 md:ml-0 ml-8">
+                                    <input class="size-4 rounded border-blue-500" type="radio" id="2" name="payment" value="mbway" />
+                                    <p class="text-xl md:text-1xl text-white text-start ml-2">MbWay</p>
+                                </div>
+                                <div class="flex items-center mt-4 md:ml-0 ml-8">
+                                    <input class="size-4 rounded border-blue-500" type="radio" id="3" name="payment" value="paysafecard" />
+                                    <p class="text-xl md:text-1xl text-white text-start ml-2">PaySafeCard <span class="text-red-800 text-sm">*o valor é arredondado</span></p>
+                                </div>
+                            </div>
+
+                            <div class="w-full text-center md:text-start mt-10 flex flex-col items-start">
+                                <span class="md:ml-0 ml-8 font-bold bg-gradient-to-t from-blue-300 to-blue-500 text-transparent bg-clip-text text-3xl sm:text-3lg">Total:</span>
+                                <p class="md:ml-0 ml-8 mt-4 text-lg md:text-xl font-bold bg-gradient-to-t from-blue-300 to-blue-500 text-transparent bg-clip-text">
+                                    <span class="text-xl text-white">Valor Final: </span> <span id="tvalue"></span>
+                                </p>
+                            </div>
+
+                            <div class="w-full text-center md:text-start mt-2 flex flex-col items-center">
+                                <a id="a" class="w-full block rounded border border-sky-500 bg-gradient-to-t from-blue-300 to-blue-500 px-12 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-sky-500 sm:mt-6" href="https://discord.com/channels/970774961037926451/970779955279585340">
+                                    Abrir ticket
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <!-- Aqui vai o conteúdo do footer -->
+        </footer>
+
+    </div>
+
+    <script type="text/javascript">
+        function updateSpan() {
+            var spanElement = document.getElementById('tvalue');
+            var input1 = document.getElementById('1');
+            var input2 = document.getElementById('2');
+            var input3 = document.getElementById('3');
+
+            var custo = '61.50€€';
+            var custo2 = '65€';
+
+            if (input3.checked) {
+                spanElement.textContent = custo2;
+            } else {
+                spanElement.textContent = custo;
+            }
+        }
+
+        window.onload = function () {
+            document.getElementById('1').addEventListener('click', updateSpan);
+            document.getElementById('2').addEventListener('click', updateSpan);
+            document.getElementById('3').addEventListener('click', updateSpan);
+        };
+    </script>
+
+    <script src="assets/js/pxwg_was_were.js"></script>
+
+</body>
+
+</html>
